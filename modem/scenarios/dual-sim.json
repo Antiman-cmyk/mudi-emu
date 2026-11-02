@@ -1,0 +1,18 @@
+{
+  "_doc": "Both slots filled: SIM 1 T-Mobile SA n71 (active), SIM 2 AT&T LTE B66. GL samples both every 10 s; band writes for slot 2 are stored without AT until GL dials it.",
+  "slot": 1,
+  "subs": {
+    "1": {
+      "serving": {"rat": "SA", "state": "NOCONN", "duplex": "FDD", "cell_id": "187461035", "tac": "870100",
+                  "pci": 721, "arfcn": 127490, "band": 71, "bw": 2, "rsrp": -99, "rsrq": -13, "sinr": 4},
+      "fallback": {"rat": "LTE", "state": "NOCONN", "duplex": "FDD", "cell_id": "2C1A803", "tac": "1D2E",
+                   "pci": 136, "arfcn": 67036, "band": 66, "bw": 5, "rsrp": -105, "rsrq": -11, "rssi": -75, "sinr": 6}
+    },
+    "2": {
+      "sim": {"present": true, "imsi": "310410000000002", "iccid": "8901410000000000002", "mcc": "310", "mnc": "410",
+              "operator": "AT&T", "spn": "AT&T", "apn": "broadband", "ip": "10.0.1.2"},
+      "serving": {"rat": "LTE", "state": "NOCONN", "duplex": "FDD", "cell_id": "A1B2C03", "tac": "1D2E",
+                  "pci": 136, "arfcn": 67036, "band": 66, "bw": 5, "rsrp": -117, "rsrq": -15, "rssi": -82, "sinr": 0}
+    }
+  }
+}

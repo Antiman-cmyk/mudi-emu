@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+"""mudi-emu entry point; everything lives in lib/mudi_emu (run `mudi-emu --help`)."""
+import os, sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "lib"))
+from mudi_emu import cli  # noqa: E402
+
+sys.exit(cli.main())

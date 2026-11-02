@@ -1,0 +1,13 @@
+{
+  "_doc": "T-Mobile NR5G-SA n71 on SIM 1 (the captured cell, reference §4.1); SIM 2 empty. If the prefs exclude SA (mode_pref LTE, nr5g_disable_mode 1, n71 filtered out) it falls back to LTE B66.",
+  "slot": 1,
+  "subs": {
+    "1": {
+      "serving": {"rat": "SA", "state": "NOCONN", "duplex": "FDD", "cell_id": "187461035", "tac": "870100",
+                  "pci": 721, "arfcn": 127490, "band": 71, "bw": 2, "rsrp": -99, "rsrq": -13, "sinr": 4},
+      "fallback": {"rat": "LTE", "state": "NOCONN", "duplex": "FDD", "cell_id": "2C1A803", "tac": "1D2E",
+                   "pci": 136, "arfcn": 67036, "band": 66, "bw": 5, "rsrp": -105, "rsrq": -11, "rssi": -75, "sinr": 6}
+    },
+    "2": {"sim": {"present": false}}
+  }
+}

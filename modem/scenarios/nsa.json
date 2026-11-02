@@ -1,0 +1,19 @@
+{
+  "_doc": "EN-DC: LTE B66 anchor + NR n78 leg on SIM 1. With NSA excluded (nr5g_disable_mode 2, n78 filtered, mode_pref LTE) it stays on the anchor as plain LTE.",
+  "slot": 1,
+  "subs": {
+    "1": {
+      "serving": {"rat": "NSA", "state": "CONNECT", "pci": 516, "arfcn": 627264, "band": 78, "bw": 12,
+                  "rsrp": -90, "rsrq": -11, "sinr": 15},
+      "anchor": {"duplex": "FDD", "cell_id": "A1B2C03", "tac": "1D2E", "pci": 136, "earfcn": 67036, "band": 66,
+                 "bw": 5, "rsrp": -95, "rsrq": -8, "rssi": -65, "sinr": 12},
+      "fallback": {"rat": "LTE", "state": "CONNECT", "duplex": "FDD", "cell_id": "A1B2C03", "tac": "1D2E",
+                   "pci": 136, "arfcn": 67036, "band": 66, "bw": 5, "rsrp": -95, "rsrq": -8, "rssi": -65, "sinr": 12},
+      "neighbours": [
+        {"kind": "intra", "earfcn": 67036, "pci": 211, "rsrq": -14, "rsrp": -108, "rssi": -80, "sinr": 2, "srxlev": 20},
+        {"kind": "inter", "earfcn": 5110, "pci": 87, "rsrq": -12, "rsrp": -101, "rssi": -74, "sinr": 5, "srxlev": 30}
+      ]
+    },
+    "2": {"sim": {"present": false}}
+  }
+}

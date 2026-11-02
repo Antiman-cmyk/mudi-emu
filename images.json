@@ -1,0 +1,22 @@
+{
+  "default": "e5800-4.10.0",
+  "images": {
+    "e5800-4.10.0": {
+      "model": "e5800",
+      "version": "4.10.0",
+      "build": "release5",
+      "url": "https://fw.gl-inet.com/firmware/e5800/release/e5800-4.10.0_release5-1092-0825-1787643675.zip",
+      "sha256": "3a6b69579000ac81c3dafcf327816b1bb7bacb4c3238ba87962c0df779cf040c",
+      "api": "https://firmware-api.gl-inet.com/cloud-api/model/info?model=e5800",
+      "baseband": ["NON-HLOS_RG650VNA01AC.bin", "NON-HLOS_RG650VEU00AD.bin"],
+      "modem": {
+        "name": "RG650V",
+        "bus": "cpu",
+        "at_port": "/dev/smd9",
+        "evidence": "lib/modem_data/modem_list.json: bus_type CPU, supports_port.port_at /dev/smd9; GL spawns `/usr/bin/modem_AT -B cpu -P /dev/smd9 -O-1` (libcm_modem.so start_at_process_by_bus)"
+      },
+      "ready_flags": ["/tmp/mcm_atcop_service_ready.flag", "/tmp/mcm_service_ready.flag", "/tmp/mcm_sim_service_ready.flag"],
+      "ready_flags_evidence": "libcm_modem.so check_ql_service_ready @0x2ccd4: access() on these, up to 60 x 1 s, before cellular_manager registers its ubus objects"
+    }
+  }
+}

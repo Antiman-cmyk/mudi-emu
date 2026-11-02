@@ -1,0 +1,8 @@
+{
+  "_doc": "SIM 1 present but not camped (+QENG SEARCH, +COPS: 0). Push a serving cell live to watch GL pick it up.",
+  "slot": 1,
+  "subs": {
+    "1": {"serving": {"rat": "NONE"}},
+    "2": {"sim": {"present": false}}
+  }
+}
