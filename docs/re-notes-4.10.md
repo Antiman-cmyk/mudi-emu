@@ -106,7 +106,7 @@ object/method/key strings a stretch of code uses).
 
 ## Additions 2026-10-28 (firmware-upgrade persistence)
 - Every E5800 upgrade path ends in `/usr/bin/abfota_update start-fota` (copy:
-  MudiModem `reference/4.10/abfota_update`): GL's `upgrade` RPC (`model == "e5800"` branch),
+  `reference/e5800-4.10.0/abfota_update`): GL's `upgrade` RPC (`model == "e5800"` branch),
   `one_click_upgrade`, and `/sbin/sysupgrade` via `lib/upgrade/platform.sh`. `GetAbNootaFileList`:
   with `-k` the keep list is `cat /lib/upgrade/keep.d/*` minus `^#|^$`; without it, the OTA's
   `quectel_ab_noota_filelist.txt`, which is comments only. `BackupUserConfigurationsBeforeUpdate`

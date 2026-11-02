@@ -7,8 +7,9 @@ firmware
   extract                     rootfs + boot.img + hw-info.json (the device tree's gl-hw node)
   extract-baseband            unpack the NON-HLOS baseband FAT images (for re/ analysis)
   info                        what is on disk
-  path rootfs|dir|zip|hwinfo|boot|baseband
+  path rootfs|dir|zip|hwinfo|boot|baseband|reference
                               print one location (for scripts; honours MUDI_EMU_FIRMWARE / _ROOTFS)
+  reference check|refresh     the GL file copies in reference/<image>/ against the extracted image
   check                       can this machine run the userland / GL's stack?
 the router's userland (qemu-user)
   run lua|eco|sh|bin ...      the image's Lua 5.1, lua-eco, busybox ash (image applets only), any binary
@@ -48,10 +49,22 @@ def main(argv=None):
     if cmd == "path":
         keys = {"rootfs": "rootfs", "dir": "dir", "zip": "zip", "hwinfo": "hwinfo", "boot": "boot",
                 "baseband": "baseband_dir"}
+        if rest == ["reference"]:
+            from . import reference
+            print(reference.directory(img))
+            return 0
         if len(rest) != 1 or rest[0] not in keys:
-            raise SystemExit("path " + "|".join(keys))
+            raise SystemExit("path " + "|".join(list(keys) + ["reference"]))
         print(img[keys[rest[0]]])
         return 0
+    if cmd == "reference":
+        from . import reference
+        if rest == ["check"]:
+            return 1 if reference.check(img) else 0
+        if rest == ["refresh"]:
+            reference.refresh(img)
+            return 0
+        raise SystemExit("reference check|refresh")
     if cmd == "check":
         from . import userland
         problems, stack = userland.check(img)

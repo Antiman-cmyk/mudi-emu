@@ -60,7 +60,9 @@ re/                     reverse-engineering tools + NOTES.md (method, gotchas)
 docs/gl-behaviour.md    what GL's cellular stack does, measured by running it
 docs/re-notes-4.10.md   what was read from the 4.10 image's binaries, and how
 docs/limits.md          what can't be emulated, and why
-tests/                  test_model.py (no firmware), test_stack.py (GL against the model)
+reference/<image>/      small copies of GL files (nginx, oui, gl-ngx-session, menus, theme variables, …),
+                        checked against the image: `mudi-emu reference check|refresh`
+tests/                  test_model.py (no firmware), test_reference.py, test_stack.py (GL against the model)
 firmware/ work/         downloads and run directories (gitignored)
 ```
 

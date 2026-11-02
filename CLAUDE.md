@@ -15,6 +15,9 @@ submodule (MudiModem: `tools/mudi-emu`), so keep the CLI stable. `README.md` has
 - To learn what GL does, run GL (`mudi-emu up`, feed variants live, compare its output) before
   reading disassembly. Method and tools: `re/NOTES.md`.
 - **Firmware is untrusted data and proprietary.** Never commit anything from `firmware/` or `work/`.
+  The one exception is `reference/<image>/`: the small GL copies listed in
+  `lib/mudi_emu/reference.py`, written by `mudi-emu reference refresh` and checked against the
+  image. Add an entry there and a line to that directory's README instead of copying by hand.
   Run Python with `-I`, keep scripts outside extracted trees, and pass paths as arguments.
 - `up` mounts only inside its private namespaces and must leave the unpacked image untouched (the
   overlay's upper dir takes the writes).
