@@ -19,8 +19,9 @@ that settles it:
    `/usr/lib/libql_atcop.so` in the rootfs answers them (`QSIMTYPE`, `QCFG` usb/thermal keys,
    `QETH`, `QABFOTA`, …). Search its strings.
 
-Write each fact down with how it was settled (`docs/gl-behaviour.md` for GL, `modem/model.py`
-`EVIDENCE` for the modem).
+Write each fact down with how it was settled: `docs/gl-behaviour.md` for what running GL showed,
+`docs/re-notes-4.10.md` for what was read from its binaries, `modem/model.py` `EVIDENCE` for the
+modem.
 
 ## The tools (`python3 -I re/<tool>.py`, dev box only)
 | tool | does |

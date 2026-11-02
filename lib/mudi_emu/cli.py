@@ -7,6 +7,8 @@ firmware
   extract                     rootfs + boot.img + hw-info.json (the device tree's gl-hw node)
   extract-baseband            unpack the NON-HLOS baseband FAT images (for re/ analysis)
   info                        what is on disk
+  path rootfs|dir|zip|hwinfo|boot|baseband
+                              print one location (for scripts; honours MUDI_EMU_FIRMWARE / _ROOTFS)
   check                       can this machine run the userland / GL's stack?
 the router's userland (qemu-user)
   run lua|eco|sh|bin ...      the image's Lua 5.1, lua-eco, busybox ash (image applets only), any binary
@@ -42,6 +44,13 @@ def main(argv=None):
         from . import firmware
         {"fetch": firmware.fetch, "extract": firmware.extract,
          "extract-baseband": firmware.extract_baseband, "info": firmware.info}[cmd](img)
+        return 0
+    if cmd == "path":
+        keys = {"rootfs": "rootfs", "dir": "dir", "zip": "zip", "hwinfo": "hwinfo", "boot": "boot",
+                "baseband": "baseband_dir"}
+        if len(rest) != 1 or rest[0] not in keys:
+            raise SystemExit("path " + "|".join(keys))
+        print(img[keys[rest[0]]])
         return 0
     if cmd == "check":
         from . import userland

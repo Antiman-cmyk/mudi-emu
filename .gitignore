@@ -1,6 +1,7 @@
 # GL firmware and everything unpacked from it: proprietary, hundreds of MB — never commit.
-/firmware/
+# (no trailing slash: a symlink to a big disk is ignored too)
+/firmware
 # emulation work dirs (mudi-emu up <dir>), caches
-/work/
+/work
 __pycache__/
 *.pyc

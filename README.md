@@ -30,6 +30,7 @@ sudo bin/mudi-emu up work/sa --scenario modem/scenarios/sa.json -- sh -c '
 jq -c '{cmd, reply, source}' work/sa/at.jsonl | head        # every AT command GL sent, and the evidence
 
 bin/mudi-emu evidence         # every modelled behaviour and what it rests on
+bin/mudi-emu path rootfs      # where things are, for scripts (MUDI_EMU_FIRMWARE moves firmware/)
 tests/run.sh                  # self-tests (the stack test needs root + the firmware)
 ```
 
@@ -57,6 +58,7 @@ modem/model.py          the RG650V behaviour model; modem/README.md (evidence, s
 modem/scenarios/        sa, nsa, lte, no-service, dual-sim
 re/                     reverse-engineering tools + NOTES.md (method, gotchas)
 docs/gl-behaviour.md    what GL's cellular stack does, measured by running it
+docs/re-notes-4.10.md   what was read from the 4.10 image's binaries, and how
 docs/limits.md          what can't be emulated, and why
 tests/                  test_model.py (no firmware), test_stack.py (GL against the model)
 firmware/ work/         downloads and run directories (gitignored)
